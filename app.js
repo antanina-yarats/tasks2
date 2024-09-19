@@ -23,4 +23,5 @@ const handleRequest = async (request) => {
   return new Response("Hello you!");
 };
 
-serve(handleRequest, { port: 7779 });
+const port = Deno.env.get("PORT") || 8080;
+serve(handleRequest, { port })
